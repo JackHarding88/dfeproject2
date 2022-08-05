@@ -23,7 +23,7 @@ class TestBase(TestCase):
         # Create table
         db.create_all()
         # Create test registree
-        sample1 = Register(name="MsWoman")
+        sample1 = Register(name="MsWonder")
         # save users to database
         db.session.add(sample1)
         db.session.commit()
@@ -39,11 +39,4 @@ class TestViews(TestBase):
     def test_home_get(self):
         response = self.client.get(url_for('home'))
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b'MsWoman', response.data)
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
+        self.assertIn(b'MsWonder', response.data)
